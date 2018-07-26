@@ -5,8 +5,7 @@ import os
 
 def get_cpu_temp():
     res = os.popen('vcgencmd measure_temp').readline()
-    print res
-    return res
+    return(res.replace("temp=","").replace("'C\n",""))
 
 if __name__ == '__main__':
-    get_cpu_temp()
+    print get_cpu_temp()
