@@ -2,7 +2,15 @@ import syst
 import gpio
 import time
 
-
+'''
+三极管开关的接法：
+三极管的平面面向自己
+从左到右的针脚依次为E B C
+E接5V
+B接针脚，比如16
+C接风扇正极
+风扇负极接GUN
+'''
 GPIO_OUT = 16
 def cleanup():
     gpio.io.cleanup()
