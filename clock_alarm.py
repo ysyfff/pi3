@@ -8,7 +8,7 @@ from time import sleep
 def get_integer():
     ctime = datetime.now()
     is_integer = False
-    if ctime.minute == 0 and ctime.second == 0:
+    if ctime.minute == 0 and ctime.second <= 5:
         is_integer = True
     return is_integer, ctime.hour - 1, ctime.minute, ctime.second
 
@@ -17,9 +17,9 @@ def query():
         is_integer, hour, minute, second = get_integer()
         print hour, minute, second
         if is_integer:
-            speech(str(hour) + '点整', 'clock', True)
-        if minute == 30 and second < 10:
-            speech(str(hour) + '点' + str(minute) + '分', 'clock_minute', True)
+            speech('现在时间是:'+str(hour) + '点整', 'clock', True)
+        elif minute == 30 and second <= 5:
+            speech('现在时间是:'+str(hour) + '点' + str(minute) + '分', 'clock_minute', True)
         sleep(0.5)
 
 if __name__ == '__main__':
