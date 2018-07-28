@@ -6,13 +6,13 @@ import gpio
 import time
 
 '''
-三极管(S9012)开关的接法：
-三极管的平面面向自己
-从左到右的针脚依次为E B C
-E接5V
-B接针脚，比如16
-C接风扇正极
-风扇负极接GUN
+偶记
+叫
+叫
+叫
+我偶极矩
+奇偶奇偶
+急
 '''
 GPIO_OUT = 16
 
@@ -22,23 +22,20 @@ def init():
 
 def open():
     print 'open'
-    gpio.io.output(GPIO_OUT, gpio.io.LOW)
+    gpio.io.output(GPIO_OUT, gpio.io.HIGH)
 
 def close():
     print 'close'
-    gpio.io.output(GPIO_OUT, gpio.io.HIGH)
+    gpio.io.output(GPIO_OUT, gpio.io.LOW)
 
 
 def controlWind():
-    is_close = True
     while True:
         cpu_temp = float(syst.get_cpu_temp())
 	print cpu_temp
-        if cpu_temp >=45 and is_close:
-            is_close = False
+        if cpu_temp >=41 :
             open()
-        elif cpu_temp < 40 and not is_close:
-            is_close = True
+        elif cpu_temp < 40:
             close()
         time.sleep(5)
 
