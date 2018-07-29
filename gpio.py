@@ -1,5 +1,6 @@
 import RPi.GPIO as io
 
+
 def init(fn):
     def wrapper():
         io.setmode(io.BOARD)
