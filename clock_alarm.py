@@ -1,9 +1,10 @@
 #!/usr/bin/python
-#coding=utf-8
+# coding=utf-8
 
 from baidu.speech import speech
 from datetime import datetime
 from time import sleep
+
 
 def get_integer():
     ctime = datetime.now()
@@ -12,6 +13,7 @@ def get_integer():
         is_integer = True
     return is_integer, ctime.hour - 1, ctime.minute, ctime.second
 
+
 def query():
     while True:
         is_integer, hour, minute, second = get_integer()
@@ -19,8 +21,10 @@ def query():
         if is_integer:
             speech('现在时间是:'+str(hour) + '点整', 'clock', True)
         elif minute == 30 and second <= 5:
-            speech('现在时间是:'+str(hour) + '点' + str(minute) + '分', 'clock_minute', True)
+            speech('现在时间是:'+str(hour) + '点' + str(minute) + '分',
+                'clock_minute', True)
         sleep(0.5)
+
 
 if __name__ == '__main__':
     query()
