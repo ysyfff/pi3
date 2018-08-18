@@ -18,3 +18,6 @@ curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools
 
 # 4. setup zsh
 bash /sh/zsh.sh
+
+# 5. install vim
+apt-get install vim
