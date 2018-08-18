@@ -6,10 +6,10 @@ ssh-keygen
 cat ~/.ssh/id_rsa.pub
 
 # 2. setup apt-get sourcelist
-sh sh/replace-apt-sources.sh
+bash sh/replace-apt-sources.sh
 
 # 3. install zsh
 curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh
 
 # 4. setup zsh
-sh /sh/zsh.sh
+bash /sh/zsh.sh
