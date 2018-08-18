@@ -6,7 +6,8 @@ import gpio
 import time
 
 GPIO_OUT = 16
-
+TEMP_LOW = 43
+TEMP_HIGH = 48
 
 '''
 请确保三极管是可用的
@@ -42,10 +43,10 @@ def controlWind():
     while True:
         cpu_temp = float(syst.get_cpu_temp())
         print cpu_temp
-        if cpu_temp >= 45 and is_close:
+        if cpu_temp >= TEMP_HIGH and is_close:
             is_close = False
             open()
-        elif cpu_temp < 40 and not is_close:
+        elif cpu_temp < TEMP_LOW and not is_close:
             is_close = True
             close()
         time.sleep(5)
