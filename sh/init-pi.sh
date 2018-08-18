@@ -1,5 +1,8 @@
-# 有些执行需要sudo权限，所以先执行su，在root账户中(状态下) 执行此文件
-# 0. 进入pi3目录，执行 su，执行sh init-pi.sh
+# 重要！重要！重要！请看tip
+
+# tip1: 有些执行需要sudo权限，所以先执行su，在root账户中(状态下) 执行此文件
+# tip2: 进入pi3目录，执行 su，执行sh init-pi.sh
+# tip3: bash是sh的增强版本，所以请使用bash执行sh脚本
 
 # 1. setup git
 ssh-keygen
