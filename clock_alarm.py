@@ -20,7 +20,7 @@ def query():
         print hour, minute, second
         if is_integer:
             speech('现在时间是:'+str(hour) + '点整', 'clock', True)
-        elif minute == 30 and second <= 5:
+        elif minute % 15 == 0 and second <= 5:
             speech('现在时间是:'+str(hour) + '点' + str(minute) + '分',
                 'clock_minute', True)
         sleep(0.5)
