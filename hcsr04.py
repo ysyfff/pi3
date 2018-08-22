@@ -6,7 +6,7 @@ from time import sleep,time
 
 TRIG_PORT = 38
 ECHO_PORT = 40
-DISTANCE = 50
+DISTANCE = 45
 
 
 def nil(): return NULL
@@ -43,6 +43,12 @@ def react(on, off):
                 off()
                 print '关灯'
             sleep(2)
+        else:
+            # 增加稳定性，弥补意外情况的发生，比如说
+            if counter == 0:
+                off()
+            else:
+                on()
         sleep(0.2)
 
 if __name__ == '__main__':
