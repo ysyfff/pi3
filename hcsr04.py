@@ -9,7 +9,7 @@ ECHO_PORT = 40
 DISTANCE = 45
 
 
-def nil(): return NULL
+def nil(): return ''
 
 @init2(TRIG_PORT, io.OUT)
 @init2(ECHO_PORT, io.IN)
@@ -17,7 +17,7 @@ def react(on, off):
     counter = 0
     while True:
         io.output(TRIG_PORT, io.HIGH)
-        sleep(0.01)
+        sleep(0.1)
         io.output(TRIG_PORT, io.LOW)
 
         while io.input(ECHO_PORT) == io.LOW:

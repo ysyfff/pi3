@@ -1,7 +1,7 @@
 from gpiozero import LED
 from time import sleep
 
-port = 13
+port = 22
 
 led = LED(port)
 
